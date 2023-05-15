@@ -1,13 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Greeter from "./Greeter";
 import Paragraphs from "./Paragraphs";
+import AppButton from "./AppButton";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
@@ -21,9 +20,7 @@ function App() {
       <Greeter />
       <Paragraphs />
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <AppButton value={"Click Me"} type={"button"} />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
