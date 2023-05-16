@@ -1,21 +1,40 @@
 // import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Greeter from "./Greeter";
 import Paragraphs from "./Paragraphs";
 import AppButton from "./AppButton";
+import LogoLink from "./LogoLink";
 
 function App() {
+  const logos = [
+    {
+      src: "./react.svg",
+      destUrl: "https://react.dev",
+      alt: "React Logo",
+    },
+    {
+      src: "./vite.svg",
+      destUrl: "https://vitejs.dev",
+      alt: "Vite Logo",
+    },
+    {
+      src: "./github.svg",
+      destUrl: "https://github.com/JannekS",
+      alt: "Github Logo",
+    },
+  ];
+
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {logos.map((logo, index) => (
+          <LogoLink
+            url={logo.destUrl}
+            imgSrc={logo.src}
+            alt={logo.alt}
+            key={index}
+          />
+        ))}
       </div>
       <Greeter />
       <Paragraphs />
