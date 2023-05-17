@@ -1,10 +1,10 @@
 import "./AppButton.css";
 
-function AppButton({ type, value }) {
+function AppButton({ type, key, message, name }) {
   return (
     <>
-      <button value={value} type={type}>
-        {value}
+      <button key={key} type={type} onClick={() => alert(message)}>
+        Hello {name}. Click here to see your personal message.
       </button>
     </>
   );
