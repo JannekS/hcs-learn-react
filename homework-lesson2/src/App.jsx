@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 
 import "./App.css";
+import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 
 function App() {
@@ -38,9 +39,7 @@ function App() {
             Please go to your inbox to read them.
           </article>
         </div>
-        <footer className="h-12 border-t border-slate-400 flex items-center px-4 text-sm text-slate-400">
-          by Dieter Developer (2022)
-        </footer>
+        <AppFooter />
       </main>
     </>
   );
