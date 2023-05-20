@@ -5,13 +5,14 @@ import AppSidebar from "./AppSidebar";
 import HomeWindow from "./HomeWindow";
 
 function App() {
+  let unreadMsgCount = 8;
   return (
     <>
       <main className="flex flex-col w-full h-full">
         <AppHeader />
         <div className="flex h-full">
           <AppSidebar />
-          <HomeWindow />
+          <HomeWindow username="Donald Duck" messageCount={unreadMsgCount} />
         </div>
         <AppFooter />
       </main>
