@@ -8,12 +8,17 @@ function App() {
   let unreadMsgCount = 8;
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
+  const sideMenuItems = [
+    { name: "Home", url: "#" },
+    { name: "Inbox", url: "#" },
+    { name: "About Me", url: "#" },
+  ];
   return (
     <>
       <main className="flex flex-col w-full h-full">
         <AppHeader pageTitle={pageTitle} messageCount={unreadMsgCount} />
         <div className="flex h-full">
-          <AppSidebar />
+          <AppSidebar menuItems={sideMenuItems} />
           <HomeWindow username="Donald Duck" messageCount={unreadMsgCount} />
         </div>
         <AppFooter copyRName={copyRight.name} copyRYear={copyRight.year} />
