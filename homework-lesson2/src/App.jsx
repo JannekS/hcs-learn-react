@@ -11,6 +11,8 @@ function App() {
   const sideMenuItems = [
     { name: "Home", url: "#" },
     { name: "Inbox", url: "#" },
+    { name: "Conversations", url: "#" },
+    { name: "Deleted", url: "#" },
     { name: "About Me", url: "#" },
   ];
   return (
