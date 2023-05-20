@@ -5,7 +5,7 @@ import AppSidebar from "./AppSidebar";
 import HomeWindow from "./HomeWindow";
 
 function App() {
-  let unreadMsgCount = 8;
+  let unreadMsgCount = 0;
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
   const sideMenuItems = [

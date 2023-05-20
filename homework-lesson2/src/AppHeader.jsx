@@ -14,7 +14,13 @@ function AppHeader({ pageTitle, messageCount }) {
             fillRule="evenodd"
           ></path>
         </svg>
-        <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
+        <span
+          className={
+            messageCount > 0
+              ? "absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
+              : "absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-slate-400 transform translate-x-1/2 -translate-y-1/2 bg-slate-200 rounded-full"
+          }
+        >
           {messageCount}
         </span>
       </span>
