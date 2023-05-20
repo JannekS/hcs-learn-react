@@ -2,6 +2,7 @@
 import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 import AppSidebar from "./AppSidebar";
+import HomeWindow from "./HomeWindow";
 
 function App() {
   return (
@@ -10,15 +11,7 @@ function App() {
         <AppHeader />
         <div className="flex h-full">
           <AppSidebar />
-          <article className="p-4">
-            Hello Visitor,
-            <br />
-            <br />
-            you have <strong>6</strong> unread messages.
-            <br />
-            <br />
-            Please go to your inbox to read them.
-          </article>
+          <HomeWindow />
         </div>
         <AppFooter />
       </main>
