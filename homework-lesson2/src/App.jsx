@@ -7,6 +7,7 @@ import HomeWindow from "./HomeWindow";
 function App() {
   let unreadMsgCount = 8;
   const pageTitle = "Mega Messenger";
+  const copyRight = { name: "Tic Developer", year: 2023 };
   return (
     <>
       <main className="flex flex-col w-full h-full">
@@ -15,7 +16,7 @@ function App() {
           <AppSidebar />
           <HomeWindow username="Donald Duck" messageCount={unreadMsgCount} />
         </div>
-        <AppFooter />
+        <AppFooter copyRName={copyRight.name} copyRYear={copyRight.year} />
       </main>
     </>
   );
