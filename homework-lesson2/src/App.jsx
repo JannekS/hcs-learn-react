@@ -6,10 +6,11 @@ import HomeWindow from "./HomeWindow";
 
 function App() {
   let unreadMsgCount = 8;
+  const pageTitle = "Mega Messenger";
   return (
     <>
       <main className="flex flex-col w-full h-full">
-        <AppHeader />
+        <AppHeader pageTitle={pageTitle} messageCount={unreadMsgCount} />
         <div className="flex h-full">
           <AppSidebar />
           <HomeWindow username="Donald Duck" messageCount={unreadMsgCount} />
