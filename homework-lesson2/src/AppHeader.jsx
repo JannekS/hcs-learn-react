@@ -2,8 +2,8 @@ import AppLogo from "./AppLogo";
 
 function AppHeader({ pageTitle, messageCount }) {
   return (
-    <header className="w-full bg-gray-100 border-b border-slate-400 h-16 flex items-center px-4 justify-between">
-      <AppLogo name={pageTitle} imgSrc="/bullhorn-solid.svg" />
+    <header className="w-full bg-indigo-100 border-b border-slate-400 h-16 flex items-center px-4 justify-between">
+      <AppLogo name={pageTitle} imgSrc="/bullhorn-solid-indigo.svg" />
 
       <span className="relative inline-block">
         <svg
@@ -20,7 +20,7 @@ function AppHeader({ pageTitle, messageCount }) {
           className={
             messageCount > 0
               ? "absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
-              : "absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-slate-400 transform translate-x-1/2 -translate-y-1/2 bg-slate-200 rounded-full"
+              : "absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-slate-500 transform translate-x-1/2 -translate-y-1/2 bg-indigo-200 rounded-full"
           }
         >
           {messageCount}
