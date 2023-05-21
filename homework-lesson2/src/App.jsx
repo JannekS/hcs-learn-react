@@ -1,11 +1,13 @@
 // import { useState } from 'react'
 import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
+import AppLogo from "./AppLogo";
 import AppSidebar from "./AppSidebar";
 import HomeWindow from "./HomeWindow";
+import MsgNotificationIcon from "./MsgNotifcationIcon";
 
 function App() {
-  let unreadMsgCount = 0;
+  let unreadMsgCount = 4;
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
   const sideMenuItems = [
@@ -18,7 +20,10 @@ function App() {
   return (
     <>
       <main className="flex flex-col w-full h-full">
-        <AppHeader pageTitle={pageTitle} messageCount={unreadMsgCount} />
+        <AppHeader>
+          <AppLogo title={pageTitle} imgSrc="/bullhorn-solid-indigo.svg" />
+          <MsgNotificationIcon messageCount={unreadMsgCount} />
+        </AppHeader>
         <div className="flex h-full">
           <AppSidebar menuItems={sideMenuItems} />
           <HomeWindow username="Donald Duck" messageCount={unreadMsgCount} />
