@@ -1,7 +1,7 @@
 function AppHeader({ pageTitle, messageCount }) {
   return (
     <header className="w-full bg-gray-100 border-b border-slate-400 h-16 flex items-center px-4 justify-between">
-      <div className="text-xl font-bold">{pageTitle}</div>
+      <div className="text-2xl font-sigmar">{pageTitle}</div>
 
       <span className="relative inline-block">
         <svg
