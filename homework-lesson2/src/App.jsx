@@ -3,11 +3,12 @@ import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 import AppLogo from "./AppLogo";
 import AppSidebar from "./AppSidebar";
+import ErrorMessage from "./ErrorMessage";
 import HomeSection from "./HomeSection";
 import MsgNotificationIcon from "./MsgNotifcationIcon";
 
 function App() {
-  let unreadMsgCount = 20;
+  let unreadMsgCount = null;
   let userName = "Donald Duck";
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
@@ -26,7 +27,13 @@ function App() {
       </AppHeader>
       <div className="flex h-full">
         <AppSidebar menuItems={sideMenuItems} />
-        <HomeSection username={userName} messageCount={unreadMsgCount} />;
+        {unreadMsgCount ? (
+          <HomeSection username={userName} messageCount={unreadMsgCount} />
+        ) : (
+          <div className="h-full w-full flex flex-col items-center justify-center">
+            <ErrorMessage errMsg="Couldn't find any messages. Please try again later." />
+          </div>
+        )}
       </div>
       <AppFooter copyRName={copyRight.name} copyRYear={copyRight.year} />
     </main>
