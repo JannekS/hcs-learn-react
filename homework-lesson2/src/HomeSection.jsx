@@ -1,4 +1,4 @@
-function HomeWindow({ username, messageCount }) {
+function HomeSection({ username = "User", messageCount }) {
   return (
     <div className="p-4">
       Hello {username},
@@ -23,4 +23,4 @@ function HomeWindow({ username, messageCount }) {
   );
 }
 
-export default HomeWindow;
+export default HomeSection;
