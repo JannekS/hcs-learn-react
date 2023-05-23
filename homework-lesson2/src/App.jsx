@@ -8,7 +8,7 @@ import HomeSection from "./HomeSection";
 import MsgNotificationIcon from "./MsgNotifcationIcon";
 
 function App() {
-  let unreadMsgCount = 5;
+  let unreadMsgCount = null;
   let userName = "Donald Duck";
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
@@ -27,7 +27,7 @@ function App() {
       </AppHeader>
       <div className="flex h-full">
         <AppSidebar menuItems={sideMenuItems} />
-        {unreadMsgCount > -1 ? (
+        {unreadMsgCount ? (
           <HomeSection username={userName} messageCount={unreadMsgCount} />
         ) : (
           <div className="h-full w-full flex flex-col items-center justify-center">
