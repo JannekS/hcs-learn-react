@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from "react";
 import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 import AppLogo from "./AppLogo";
@@ -8,7 +8,12 @@ import HomeSection from "./HomeSection";
 import MsgNotificationIcon from "./MsgNotifcationIcon";
 
 function App() {
-  let unreadMsgCount = null;
+  const [unreadMsgCount, setUnreadMesageCount] = useState(12);
+  function changeMessageCount(addValue) {
+    if (unreadMsgCount + addValue > -1) {
+      setUnreadMesageCount(unreadMsgCount + addValue);
+    }
+  }
   let userName = "Donald Duck";
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
@@ -26,8 +31,12 @@ function App() {
         <MsgNotificationIcon messageCount={unreadMsgCount} />
       </AppHeader>
       <div className="flex h-full">
-        <AppSidebar menuItems={sideMenuItems} />
-        {unreadMsgCount ? (
+        <AppSidebar
+          menuItems={sideMenuItems}
+          onChangeMessageCount={changeMessageCount}
+          unreadMsgCount={unreadMsgCount}
+        />
+        {unreadMsgCount > -1 ? (
           <HomeSection username={userName} messageCount={unreadMsgCount} />
         ) : (
           <div className="h-full w-full flex flex-col items-center justify-center">
