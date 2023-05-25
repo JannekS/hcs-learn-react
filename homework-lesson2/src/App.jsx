@@ -6,9 +6,16 @@ import AppSidebar from "./AppSidebar";
 import ErrorMessage from "./ErrorMessage";
 import HomeSection from "./HomeSection";
 import MsgNotificationIcon from "./MsgNotifcationIcon";
+import messageArray from "./messages.js";
 
 function App() {
-  const [unreadMsgCount, setUnreadMesageCount] = useState(12);
+  const [messages, setMessages] = useState(messageArray);
+
+  const [unreadMessages, setUnreadMessages] = useState(messages);
+
+  const [unreadMsgCount, setUnreadMesageCount] = useState(
+    unreadMessages.length
+  );
   function changeMessageCount(addValue) {
     if (unreadMsgCount + addValue > -1) {
       setUnreadMesageCount(unreadMsgCount + addValue);
@@ -24,6 +31,7 @@ function App() {
     { name: "Deleted", url: "#" },
     { name: "About Me", url: "#" },
   ];
+
   return (
     <main className="flex flex-col w-full h-full">
       <AppHeader>
