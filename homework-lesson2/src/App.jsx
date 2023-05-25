@@ -7,6 +7,7 @@ import ErrorMessage from "./ErrorMessage";
 import HomeSection from "./HomeSection";
 import MsgNotificationIcon from "./MsgNotifcationIcon";
 import messageArray from "./messages.js";
+import Inbox from "./Inbox";
 
 function App() {
   const [messages, setMessages] = useState(messageArray);
@@ -45,7 +46,10 @@ function App() {
           unreadMsgCount={unreadMsgCount}
         />
         {unreadMsgCount > -1 ? (
-          <HomeSection username={userName} messageCount={unreadMsgCount} />
+          <div className="flex flex-col gap-4 px-6 w-full overflow-auto">
+            <HomeSection username={userName} messageCount={unreadMsgCount} />
+            <Inbox unreadMessages={unreadMessages} />
+          </div>
         ) : (
           <div className="h-full w-full flex flex-col items-center justify-center">
             <ErrorMessage errMsg="Couldn't find any messages. Please try again later." />

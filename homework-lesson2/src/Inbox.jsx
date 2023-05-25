@@ -1,8 +1,10 @@
+import Message from "./Message";
+
 function Inbox({ unreadMessages }) {
   return (
     <>
       <h2>Inbox</h2>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-3 w-full h-96 overflow-auto">
         {unreadMessages.map((msg) => (
           <Message
             author={msg.author}
