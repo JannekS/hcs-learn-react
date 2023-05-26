@@ -17,12 +17,15 @@ function App() {
   const [unreadMsgCount, setUnreadMesageCount] = useState(
     unreadMessages.length
   );
+
+  const [username, setUsername] = useState("Donald Duck");
+
   function changeMessageCount(addValue) {
     if (unreadMsgCount + addValue > -1) {
       setUnreadMesageCount(unreadMsgCount + addValue);
     }
   }
-  let userName = "Donald Duck";
+
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
   const sideMenuItems = [
@@ -35,7 +38,7 @@ function App() {
 
   return (
     <main className="flex flex-col w-full h-full">
-      <AppHeader>
+      <AppHeader username={username}>
         <AppLogo title={pageTitle} imgSrc="/bullhorn-solid-indigo.svg" />
         <MsgNotificationIcon messageCount={unreadMsgCount} />
       </AppHeader>
@@ -44,10 +47,12 @@ function App() {
           menuItems={sideMenuItems}
           onChangeMessageCount={changeMessageCount}
           unreadMsgCount={unreadMsgCount}
+          username={username}
+          changeUsername={setUsername}
         />
         {unreadMsgCount > -1 ? (
           <div className="flex flex-col gap-4 px-6 w-full overflow-auto">
-            <HomeSection username={userName} messageCount={unreadMsgCount} />
+            <HomeSection username={username} messageCount={unreadMsgCount} />
             <Inbox unreadMessages={unreadMessages} />
           </div>
         ) : (
