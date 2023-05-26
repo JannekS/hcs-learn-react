@@ -8,13 +8,13 @@ const messageArray = [
   {
     id: 2,
     author: "Daisy",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates cumque molestiae magni repudiandae corporis id ut. Blanditiis nisi vitae perferendis, iste culpa voluptatem sapiente laudantium doloremque ad rerum tenetur! Nemo quibusdam cum dolorem temporibus debitis doloremque animi, doloribus, accusamus voluptatibus quasi labore delectus repudiandae. Impedit, officiis inventore quidem facere iusto, magni harum, sunt maiores quos repellat vel eaque temporibus. Consequatur consectetur reprehenderit similique assumenda placeat error explicabo nemo dicta sapiente perferendis aspernatur, quam neque quis. Inventore minus quia itaque provident consequuntur voluptate dolores eius atque blanditiis, quis aliquid enim.",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates cumque molestiae magni repudiandae corporis id ut. Blanditiis nisi vitae perferendis, iste culpa voluptatem sapiente laudantium doloremque ad rerum tenetur! Nemo quibusdam cum dolorem temporibus debitis doloremque animi, doloribus, accusamus voluptatibus quasi labore delectus repudiandae.",
     status: "unread",
   },
   {
     id: 3,
     author: "Mickey",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, numquam. Sapiente cupiditate officia rerum excepturi soluta natus iure eum molestiae obcaecati distinctio, fugit reiciendis sequi sint voluptatum, commodi ut aliquam! Temporibus quidem sed commodi dolore ea debitis enim fuga beatae possimus ut tempore adipisci nihil exercitationem, ad soluta consectetur modi. Autem, dignissimos. Necessitatibus voluptates pariatur, facilis ipsam dolores repellendus quidem! Asperiores nisi blanditiis similique. Aut non incidunt sed corrupti accusantium temporibus hic dolor odit voluptatibus! Qui, totam ex? Ut commodi accusantium dicta praesentium tempore assumenda ratione explicabo qui libero quaerat. Officiis accusantium sequi asperiores illo, quaerat impedit labore quae adipisci possimus facilis consequatur rerum voluptatem nihil distinctio! Culpa, perspiciatis voluptate quaerat debitis magnam laborum commodi aperiam accusantium est quas non.",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, numquam. Sapiente cupiditate officia rerum excepturi soluta natus iure eum molestiae obcaecati distinctio, fugit reiciendis sequi sint voluptatum, commodi ut aliquam! Temporibus quidem sed commodi dolore ea debitis enim fuga beatae possimus ut tempore adipisci nihil exercitationem, ad soluta consectetur modi. Autem, dignissimos. Necessitatibus voluptates pariatur, facilis ipsam dolores repellendus quidem! Asperiores nisi blanditiis similique. Aut non incidunt sed corrupti accusantium temporibus hic dolor odit voluptatibus! Qui, totam ex?.",
     status: "unread",
   },
   {
@@ -50,7 +50,7 @@ const messageArray = [
   {
     id: 9,
     author: "Dagobert",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates cumque molestiae magni repudiandae corporis id ut. Blanditiis nisi vitae perferendis, iste culpa voluptatem sapiente laudantium doloremque ad rerum tenetur! Nemo quibusdam cum dolorem temporibus debitis doloremque animi, doloribus, accusamus voluptatibus quasi labore delectus repudiandae. Impedit, officiis inventore quidem facere iusto, magni harum, sunt maiores quos repellat vel eaque temporibus. Consequatur consectetur reprehenderit similique assumenda placeat error explicabo nemo dicta sapiente perferendis aspernatur, quam neque quis. Inventore minus quia itaque provident consequuntur voluptate dolores eius atque blanditiis, quis aliquid enim.",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates cumque molestiae magni repudiandae corporis id ut. Blanditiis nisi vitae perferendis, iste culpa voluptatem sapiente laudantium doloremque ad rerum tenetur! Nemo quibusdam cum dolorem temporibus debitis doloremque animi, doloribus, accusamus voluptatibus quasi labore delectus repudiandae.",
     status: "unread",
   },
   {
@@ -86,7 +86,7 @@ const messageArray = [
   {
     id: 15,
     author: "Mickey",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates cumque molestiae magni repudiandae corporis id ut. Blanditiis nisi vitae perferendis, iste culpa voluptatem sapiente laudantium doloremque ad rerum tenetur! Nemo quibusdam cum dolorem temporibus debitis doloremque animi, doloribus, accusamus voluptatibus quasi labore delectus repudiandae. Impedit, officiis inventore quidem facere iusto, magni harum, sunt maiores quos repellat vel eaque temporibus. Consequatur consectetur reprehenderit similique assumenda placeat error explicabo nemo dicta sapiente perferendis aspernatur, quam neque quis. Inventore minus quia itaque provident consequuntur voluptate dolores eius atque blanditiis, quis aliquid enim.",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates cumque molestiae magni repudiandae corporis id ut. Blanditiis nisi vitae perferendis, iste culpa voluptatem sapiente laudantium doloremque ad rerum tenetur!",
     status: "unread",
   },
 ];
