@@ -1,11 +1,11 @@
 import { useState } from "react";
 import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
-import AppLogo from "./AppLogo";
+
 import AppSidebar from "./AppSidebar";
 import ErrorMessage from "./ErrorMessage";
 import HomeSection from "./HomeSection";
-import MsgNotificationIcon from "./MsgNotifcationIcon";
+
 import messageArray from "./messages.js";
 import Inbox from "./Inbox";
 
@@ -38,10 +38,11 @@ function App() {
 
   return (
     <main className="flex flex-col w-full h-full">
-      <AppHeader username={username}>
-        <AppLogo title={pageTitle} imgSrc="/bullhorn-solid-indigo.svg" />
-        <MsgNotificationIcon messageCount={unreadMsgCount} />
-      </AppHeader>
+      <AppHeader
+        username={username}
+        headerTitle={pageTitle}
+        unreadMsgCount={unreadMsgCount}
+      ></AppHeader>
       <div className="flex h-full">
         <AppSidebar
           menuItems={sideMenuItems}

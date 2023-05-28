@@ -1,12 +1,16 @@
-function AppHeader({ username, children }) {
+import AppLogo from "./AppLogo";
+import MsgNotificationIcon from "./MsgNotifcationIcon";
+import UserIcon from "./UserIcon";
+
+function AppHeader({ username, headerTitle, unreadMsgCount }) {
   return (
     <header className="w-full bg-indigo-100 border-b border-slate-400 h-16 flex flex-row items-center px-4 justify-between">
       <div className="flex flex-row items-center justify-between flex-1">
-        {children}
+        <AppLogo title={headerTitle} imgSrc="/bullhorn-solid-indigo.svg" />
+        <div className="flex-1"></div>
+        <UserIcon username={username} />
+        <MsgNotificationIcon messageCount={unreadMsgCount} />
       </div>
-      <p className="ml-4 text-xs font-bold tracking-tight text-indigo-700">
-        for {username}
-      </p>
     </header>
   );
 }
