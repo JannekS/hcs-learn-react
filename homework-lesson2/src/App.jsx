@@ -26,6 +26,13 @@ function App() {
     }
   }
 
+  function updateMessage(newMsg) {
+    const updateMsgIdx = messages.findIndex((msg) => msg.id === newMsg.id);
+    const updatedMessages = [...messages];
+    updatedMessages[updateMsgIdx] = newMsg;
+    setMessages(updatedMessages);
+  }
+
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
   const sideMenuItems = [
@@ -54,7 +61,7 @@ function App() {
         {unreadMsgCount > -1 ? (
           <div className="flex flex-col gap-4 px-6 w-full overflow-auto">
             <HomeSection username={username} messageCount={unreadMsgCount} />
-            <Inbox unreadMessages={unreadMessages} />
+            <Inbox inboxMessages={messages} updateMessage={updateMessage} />
           </div>
         ) : (
           <div className="h-full w-full flex flex-col items-center justify-center">
