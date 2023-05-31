@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AppHeader from "./AppHeader";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -13,13 +14,12 @@ function App() {
 
   useEffect(() => {
     fetchTodoData();
-    console.log(todos);
   }, []);
 
   return (
     <>
+      <AppHeader />
       <main className="p-4">
-        <h1 className="my-2 text-lg font-bold">My Simple Dashboard</h1>
         <h2 className="my-4 text-md font-bold">My Todos:</h2>
         <ul className="list-disc ml-4">
           {todos.map((todo) => (
