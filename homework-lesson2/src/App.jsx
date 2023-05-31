@@ -12,10 +12,8 @@ import Inbox from "./Inbox";
 function App() {
   const [messages, setMessages] = useState(messageArray);
 
-  const [unreadMessages, setUnreadMessages] = useState(messages);
-
   const [unreadMsgCount, setUnreadMesageCount] = useState(
-    unreadMessages.length
+    messages.filter((msg) => msg.status === "unread").length
   );
 
   const [username, setUsername] = useState("Donald Duck");
@@ -31,16 +29,19 @@ function App() {
     const updatedMessages = [...messages];
     updatedMessages[updateMsgIdx] = newMsg;
     setMessages(updatedMessages);
+    setUnreadMesageCount(
+      updatedMessages.filter((msg) => msg.status === "unread").length
+    );
   }
 
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
   const sideMenuItems = [
-    { name: "Home", url: "#" },
-    { name: "Inbox", url: "#" },
-    { name: "Conversations", url: "#" },
-    { name: "Deleted", url: "#" },
-    { name: "About Me", url: "#" },
+    { name: "Home", url: "/" },
+    { name: "Inbox", url: "/inbox" },
+    { name: "Conversations", url: "/" },
+    { name: "Deleted", url: "/" },
+    { name: "About Me", url: "/" },
   ];
 
   return (
@@ -58,6 +59,7 @@ function App() {
           username={username}
           changeUsername={setUsername}
         />
+
         {unreadMsgCount > -1 ? (
           <div className="flex flex-col gap-4 px-6 w-full overflow-auto">
             <HomeSection username={username} messageCount={unreadMsgCount} />
