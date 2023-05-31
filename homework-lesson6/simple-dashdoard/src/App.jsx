@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import AppHeader from "./AppHeader";
+import TodoList from "./TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -20,12 +21,7 @@ function App() {
     <>
       <AppHeader />
       <main className="p-4">
-        <h2 className="my-4 text-md font-bold">My Todos:</h2>
-        <ul className="list-disc ml-4">
-          {todos.map((todo) => (
-            <li>{todo.title}</li>
-          ))}
-        </ul>
+        <TodoList todos={todos} />
       </main>
     </>
   );
