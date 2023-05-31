@@ -18,8 +18,15 @@ function App() {
 
   return (
     <>
-      <h1>My Simple Dashboard</h1>
-      <h2>{todos.length}</h2>
+      <main className="p-4">
+        <h1 className="my-2 text-lg font-bold">My Simple Dashboard</h1>
+        <h2 className="my-4 text-md font-bold">My Todos:</h2>
+        <ul className="list-disc ml-4">
+          {todos.map((todo) => (
+            <li>{todo.title}</li>
+          ))}
+        </ul>
+      </main>
     </>
   );
 }
