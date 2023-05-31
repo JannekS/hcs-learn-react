@@ -1,38 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 
 import AppSidebar from "./AppSidebar";
 import ErrorMessage from "./ErrorMessage";
 import HomeSection from "./HomeSection";
-
-import messageArray from "./messages.js";
 import Inbox from "./Inbox";
 
 function App() {
-  const [messages, setMessages] = useState(messageArray);
-
-  const [unreadMsgCount, setUnreadMesageCount] = useState(
-    messages.filter((msg) => msg.status === "unread").length
-  );
-
+  const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState("Donald Duck");
 
-  function changeMessageCount(addValue) {
-    if (unreadMsgCount + addValue > -1) {
-      setUnreadMesageCount(unreadMsgCount + addValue);
-    }
-  }
-
-  function updateMessage(newMsg) {
-    const updateMsgIdx = messages.findIndex((msg) => msg.id === newMsg.id);
-    const updatedMessages = [...messages];
-    updatedMessages[updateMsgIdx] = newMsg;
-    setMessages(updatedMessages);
-    setUnreadMesageCount(
-      updatedMessages.filter((msg) => msg.status === "unread").length
-    );
-  }
+  let unreadMsgCount = messages.filter((msg) => msg.status === "unread").length;
 
   const pageTitle = "Mega Messenger";
   const copyRight = { name: "Tic Developer", year: 2023 };
@@ -44,6 +23,29 @@ function App() {
     { name: "About Me", url: "/" },
   ];
 
+  useEffect(() => {
+    getMessages();
+  }, []);
+
+  async function getMessages() {
+    const msgRes = await fetch("/messages.json");
+    const msgData = await msgRes.json();
+    setMessages(msgData);
+  }
+
+  function updateMessage(newMsg) {
+    const updateMsgIdx = messages.findIndex((msg) => msg.id === newMsg.id);
+    const updatedMessages = [...messages];
+    updatedMessages[updateMsgIdx] = newMsg;
+    setMessages(updatedMessages);
+  }
+
+  // function changeMessageCount(addValue) {
+  //   if (unreadMsgCount + addValue > -1) {
+  //     setUnreadMesageCount(unreadMsgCount + addValue);
+  //   }
+  // }
+
   return (
     <main className="flex flex-col w-full h-full">
       <AppHeader
@@ -54,7 +56,7 @@ function App() {
       <div className="flex h-full">
         <AppSidebar
           menuItems={sideMenuItems}
-          onChangeMessageCount={changeMessageCount}
+          // onChangeMessageCount={changeMessageCount}
           unreadMsgCount={unreadMsgCount}
           username={username}
           changeUsername={setUsername}
