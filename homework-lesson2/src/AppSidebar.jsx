@@ -1,13 +1,7 @@
 import AppButton from "./AppButton";
 import MenuItem from "./MenuItem";
 
-function AppSidebar({
-  menuItems,
-  onChangeMessageCount,
-  unreadMsgCount,
-  changeUsername,
-  username,
-}) {
+function AppSidebar({ menuItems, changeUsername, username }) {
   return (
     <aside className="w-1/4 h-full border-slate-400 border-r p-4">
       <ul className="flex flex-col gap-3 font-semibold">
@@ -32,17 +26,17 @@ function AppSidebar({
         <AppButton
           text="Get message"
           width={44}
-          onClick={() => onChangeMessageCount(1)}
+          onClick={() => console.log("This button is currently disabled.")}
         />
         <AppButton
           text="Mark message as read"
           width={44}
-          onClick={() => onChangeMessageCount(-1)}
+          onClick={() => console.log("This button is currently disabled.")}
         />
         <AppButton
           text="Mark all messages as read"
           width={44}
-          onClick={() => onChangeMessageCount(-unreadMsgCount)}
+          onClick={() => console.log("This button is currently disabled.")}
         />
       </div>
     </aside>

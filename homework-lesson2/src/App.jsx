@@ -40,24 +40,16 @@ function App() {
     setMessages(updatedMessages);
   }
 
-  // function changeMessageCount(addValue) {
-  //   if (unreadMsgCount + addValue > -1) {
-  //     setUnreadMesageCount(unreadMsgCount + addValue);
-  //   }
-  // }
-
   return (
     <main className="flex flex-col w-full h-full">
       <AppHeader
         username={username}
         headerTitle={pageTitle}
         unreadMsgCount={unreadMsgCount}
-      ></AppHeader>
+      />
       <div className="flex h-full">
         <AppSidebar
           menuItems={sideMenuItems}
-          // onChangeMessageCount={changeMessageCount}
-          unreadMsgCount={unreadMsgCount}
           username={username}
           changeUsername={setUsername}
         />
