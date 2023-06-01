@@ -6,6 +6,7 @@ import AppSidebar from "./AppSidebar";
 import ErrorMessage from "./ErrorMessage";
 import HomeSection from "./HomeSection";
 import Inbox from "./Inbox";
+import { Route } from "wouter";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -56,8 +57,12 @@ function App() {
 
         {unreadMsgCount > -1 ? (
           <div className="flex flex-col gap-4 px-6 w-full overflow-auto">
-            <HomeSection username={username} messageCount={unreadMsgCount} />
-            <Inbox inboxMessages={messages} updateMessage={updateMessage} />
+            <Route path="/">
+              <HomeSection username={username} messageCount={unreadMsgCount} />
+            </Route>
+            <Route path="/inbox">
+              <Inbox inboxMessages={messages} updateMessage={updateMessage} />
+            </Route>
           </div>
         ) : (
           <div className="h-full w-full flex flex-col items-center justify-center">

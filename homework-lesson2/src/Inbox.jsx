@@ -14,10 +14,10 @@ function Inbox({ inboxMessages, updateMessage }) {
       : [...inboxMessages];
 
   return (
-    <div className="border-slate-400 border-t py-4">
+    <div className="">
       <div
         id="inbox-header"
-        className="flex flex-row justify-between items-center mb-4"
+        className="flex flex-row justify-between items-center my-4"
       >
         <h2 className="text-lg font-bold">Inbox</h2>
         <div className="text-sm">
@@ -36,7 +36,7 @@ function Inbox({ inboxMessages, updateMessage }) {
         </div>
       </div>
 
-      <ul className="flex flex-col gap-3 w-full h-96 overflow-auto">
+      <ul className="flex flex-col gap-3 w-full h-[78vh] overflow-auto">
         {displayedMessages.map((msg) => (
           <Message
             author={msg.author}
