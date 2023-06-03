@@ -7,6 +7,7 @@ function WeatherSection() {
     muenchen: { lat: 48.7, lon: 13.46 },
   };
   const [weatherData, setWeatherData] = useState();
+  const [weatherCodes, setWeatherCodes] = useState();
   const [coordinates, setCoordinates] = useState(locations.berlin);
   const [hour, setHour] = useState(0);
 
@@ -14,6 +15,9 @@ function WeatherSection() {
     setCurrentHour();
     fetchWeaterData(coordinates);
   }, [hour, coordinates]);
+  useEffect(() => {
+    fetchWeatherCodes();
+  }, []);
 
   async function fetchWeaterData(coordinates) {
     const res = await fetch(
@@ -22,6 +26,14 @@ function WeatherSection() {
     const apiData = await res.json();
     setWeatherData(apiData);
     // console.log(apiData);
+  }
+
+  async function fetchWeatherCodes() {
+    const res = await fetch("/weatherCodes.json");
+    const weatherCodeData = await res.json();
+    setWeatherCodes(weatherCodeData);
+    console.log(weatherCodeData[0][3].day.description);
+    console.log(weatherCodeData);
   }
 
   function setCurrentHour() {
@@ -58,11 +70,32 @@ function WeatherSection() {
           Update Weather
         </button>
       </div>
-      {weatherData ? (
-        <div className="flex flex-col space-y-4 items-center justify-center w-full p-4 rounded-md bg-sky-50">
-          <p>{weatherData.current_weather.temperature} °C</p>
-          <p>Cloud Cover: {weatherData.hourly.cloudcover[hour]} %</p>
-          <p>Rain: {weatherData.hourly.rain[hour]} mm</p>
+      {weatherData && weatherCodes ? (
+        <div className="flex flex-row justify-around w-full p-4 rounded-md bg-sky-50">
+          <div className="flex flex-col space-y-2">
+            <p>
+              {
+                weatherCodes[0][weatherData.current_weather.weathercode].day
+                  .description
+              }
+              {", "}
+              {weatherData.current_weather.temperature} °C
+            </p>
+            <div className="w-20 h-20 mx-auto rounded-lg bg-blue-300">
+              <img
+                src={
+                  weatherCodes[0][weatherData.current_weather.weathercode].day
+                    .image
+                }
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col space-y-2">
+            <p>min: {weatherData.daily.temperare_2m_min} °C</p>
+            <p>max: {weatherData.daily.temperature_2m_max} °C</p>
+            <p>rain: {weatherData.daily.rain_sum[0]} mm</p>
+          </div>
         </div>
       ) : (
         <p>One moment please...</p>
