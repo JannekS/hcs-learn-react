@@ -34,7 +34,7 @@ function TodoList({ todos }) {
         </button>
       </div>
 
-      <ul className="flex flex-col space-y-2 h-96 overflow-auto ml-4">
+      <ul className="flex flex-col space-y-2 h-96 overflow-auto mt-4">
         {displayedTodos.map((todo) => (
           <TodoItem todo={todo} key={todo.id} />
         ))}
